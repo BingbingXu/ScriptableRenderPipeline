@@ -1487,14 +1487,15 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
 
                 float nearClipPlane, farClipPlane, aspect, fov;
                 Color backgroundColor;
-                CameraClearFlags clearFlags;
+                HDAdditionalCameraData.ClearColorMode clearFlags;
+                bool clearDepth;
                 Quaternion captureRotation;
                 Matrix4x4 worldToCamera, projection;
 
                 ReflectionSystem.CalculateCaptureCameraProperties(
                     planarProbe,
                     out nearClipPlane, out farClipPlane,
-                    out aspect, out fov, out clearFlags, out backgroundColor,
+                    out aspect, out fov, out clearFlags, out clearDepth, out backgroundColor,
                     out worldToCamera, out projection, out capturePosition, out captureRotation,
                     camera);
 
