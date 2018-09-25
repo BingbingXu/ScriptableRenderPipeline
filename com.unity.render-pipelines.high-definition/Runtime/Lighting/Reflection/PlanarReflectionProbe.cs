@@ -76,6 +76,17 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
             }
         }
 
+        //for strange reason, current ReflectionSystem needs a proxyExtents two time bigger for planar. To be fixed when refactoring the ReflectionSystem
+        public override Vector3 proxyExtents
+        {
+            get
+            {
+                return proxyVolume != null
+                    ? proxyVolume.proxyVolume.extents
+                    : influenceVolume.boxSize; 
+            }
+        }
+
         public void RequestRealtimeRender()
         {
             if (isActiveAndEnabled)

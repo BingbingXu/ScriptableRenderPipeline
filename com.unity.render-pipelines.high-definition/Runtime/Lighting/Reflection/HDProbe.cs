@@ -145,7 +145,7 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
                     : influenceToWorld;
             }
         }
-        public Vector3 proxyExtents
+        public virtual Vector3 proxyExtents
         {
             get
             {
