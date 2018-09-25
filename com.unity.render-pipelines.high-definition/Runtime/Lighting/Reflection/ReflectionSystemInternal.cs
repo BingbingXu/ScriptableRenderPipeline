@@ -509,7 +509,7 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline.Internal
             fov = probe.overrideFieldOfView
                 ? probe.fieldOfViewOverride
                 : Mathf.Max(viewerCamera.fieldOfView, viewerCamera.fieldOfView * viewerCamera.aspect);
-            clearFlags = viewerCamera.GetComponent<HDAdditionalCameraData>().clearColorMode;
+            clearFlags = probe.captureSettings.clearColorMode;
             backgroundColor = viewerCamera.backgroundColor;
 
             var worldToCapture = GeometryUtils.CalculateWorldToCameraMatrixRHS(viewerCamera.transform);
